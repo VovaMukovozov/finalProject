@@ -9,7 +9,6 @@ body {
 
 #wrapper {
     background: #ededed;;
-    height: 600px;
 }
 
 .main {
@@ -17,10 +16,34 @@ body {
     margin: 0 auto;
 }
 
+/* main-1 all styles */
+
 #main-1 {
     background: #fff;
     height: 50px;
 }
+
+#top-navigation {
+    line-height: 50px;
+}
+
+#top-navigation ul {
+    list-style-type: none;
+}
+
+#top-navigation ul li {
+    float: left;
+    margin-right: 30px;
+}
+
+#top-navigation ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+/*------------------------------*/
+
+/* main-2 all styles */
 
 #main-2 {
     background: #fd0101;
@@ -54,28 +77,12 @@ body {
     position: relative;
 }
 
-#top-navigation {
-    line-height: 50px;
-}
-
-#top-navigation ul {
-    list-style-type: none;
-}
-
-#top-navigation ul li {
-    float: left;
-    margin-right: 30px;
-}
-
-#top-navigation ul li a {
-    color: #000;
-    text-decoration: none;
-}
 
 #site-name a {
     color: #fff;
     text-decoration: none;
     font-size: 70px;
+    margin-left: -5px;
 }
 
 #search {
@@ -97,3 +104,78 @@ body {
     left: 28px;
     color: #fff;
 }
+
+/* ------------------------------ */
+
+/* main-3 all styles */
+
+#main-3 {
+    height: 640px;
+}
+
+.last-album {
+    position: relative;
+    width: 40%;
+    float: left;
+    margin-top: -20px;
+}
+
+.lasts-albums {
+    width: 60%;
+    float: right;
+    margin-top: -20px;
+}
+
+.last-album img {
+    width: 100%;
+    height: 640px;
+}
+
+.last-album-bottom {
+    position: absolute;
+    bottom: 3px;
+    height: 120px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.last-album-bottom .last-album-artist {
+    margin: 10px 0 10px 10px;
+    font-size: 45px;
+}
+
+.last-album-bottom .last-album-name {
+    margin-left: 10px;
+    font-size: 30px;
+    color: #fd0101;
+}
+
+.main-3-list-albums {
+    position: relative;
+    width: 25%;
+    height: 320px;
+    float: left;
+}
+
+.main-3-list-albums img {
+    width: 100%;
+    height: 320px;
+}
+
+.lasts-albums-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.lasts-albums-artist {
+    color: #fff;   
+}
+
+.lasts-albums-name {
+    color: #fd0101;
+}
+/* ------------------- */

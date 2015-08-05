@@ -38,6 +38,45 @@
                     </div>
                 </div>
             </div>
+            <div id="main-3">
+                <div class="last-album">
+                    <img src="images/alboms_images/lady_gaga_-_disco_heaven_1.png" />
+                    <div class="last-album-bottom">
+                        <p class="last-album-artist">Lady Gaga</p>
+                        <p class="last-album-name">Disco Heaven</p>
+                    </div>
+                </div>
+                <div class="lasts-albums">
+                    <div class="main-3-list-albums">
+                        <img src="images/alboms_images/a_day_to_remember_-_what_separates_me_from_you_1.png" />
+                        <div class="lasts-albums-bottom">
+                            <p class="lasts-albums-artist">Artist name</p>
+                            <p class="lasts-albums-name">Album name</p>
+                        </div>
+                    </div>
+                    <div class="main-3-list-albums">
+                        <img src="images/alboms_images/acdc_-_ballbreaker_1.png" />
+                    </div>
+                    <div class="main-3-list-albums">
+                        <img src="images/alboms_images/acdc_s_iron_man_2_soundtrack_1.png" />
+                    </div>
+                    <div class="main-3-list-albums">
+                        <img src="images/alboms_images/anthrax_-_fistful_of_metal_1.png" />
+                    </div>
+                    <div class="main-3-list-albums">
+                        <img src="images/alboms_images/black_eyed_peas_-_black_eyed_peas_triple_pack_box_1.png" />
+                    </div>
+                    <div class="main-3-list-albums">
+                        <img src="images/alboms_images/bob_dylan_-_a_bird_s_nest_in_your_hair_1.png" />
+                    </div>
+                    <div class="main-3-list-albums">
+                        <img src="images/alboms_images/bob_dylan_-_one_night_only_1.png" />
+                    </div>
+                    <div class="main-3-list-albums">
+                        <img src="images/alboms_images/bon_jovi_-_greatest_hits_the_ultimate_collect_music_1.png" />
+                    </div>
+                </div>
+            </div>
         </div> 
     </body>
 </html>
