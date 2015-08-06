@@ -1,6 +1,5 @@
 <?php
 // namespace core\Model;
-//zaparka
 require_once dirname( __FILE__ ) . '/Model.php';
 
 class AlbumModel extends Model {
