@@ -110,72 +110,85 @@ body {
 /* main-3 all styles */
 
 #main-3 {
-    height: 640px;
+    
 }
 
 .last-album {
     position: relative;
-    width: 40%;
     float: left;
+    width: 35%;
     margin-top: -20px;
 }
 
-.lasts-albums {
-    width: 60%;
+.lasts-albums-list {
     float: right;
+    width: 65%;
     margin-top: -20px;
 }
 
 .last-album img {
+    height: 523px;
     width: 100%;
-    height: 640px;
 }
 
-.last-album-bottom {
+.album-small-banner {
+    float: left;
+    width: 25%;
+    height: 261.5px;
+    position: relative;
+}
+
+.album-small-banner img {
+    width: 100%;
+    height: 261.5px;
+}
+
+.last-album-details {
     position: absolute;
     bottom: 3px;
+    left: 0;
+    width: 100%;
     height: 120px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.last-album-details .album-artist {
     color: #fff;
+    margin: 5px 0 0 5px;
+    font-size: 50px;
 }
 
-.last-album-bottom .last-album-artist {
-    margin: 10px 0 10px 10px;
-    font-size: 45px;
-}
-
-.last-album-bottom .last-album-name {
-    margin-left: 10px;
-    font-size: 30px;
+.last-album-details .album-name {
     color: #fd0101;
+    margin: 5px 0 0 5px;
+    font-size: 35px;
 }
 
-.main-3-list-albums {
-    position: relative;
-    width: 25%;
-    height: 320px;
-    float: left;
-}
-
-.main-3-list-albums img {
-    width: 100%;
-    height: 320px;
-}
-
-.lasts-albums-bottom {
+.lasts-albums-details {
     position: absolute;
     bottom: 0;
-    height: 70px;
+    left: 0;
     width: 100%;
+    height: 70px;
     background: rgba(0, 0, 0, 0.8);
 }
 
-.lasts-albums-artist {
-    color: #fff;   
+.lasts-albums-details .album-artist {
+    color: #fff;
+    margin: 5px 0 0 5px;
+    font-size: 25px;
 }
 
-.lasts-albums-name {
+.lasts-albums-details .album-name {
     color: #fd0101;
+    margin: 5px 0 0 5px;
+    font-size: 20px;
 }
+
 /* ------------------- */
+
+/* main-4 all styles */
+
+#main-4 {
+      
+}

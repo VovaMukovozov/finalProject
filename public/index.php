@@ -40,41 +40,75 @@
             </div>
             <div id="main-3">
                 <div class="last-album">
-                    <img src="images/alboms_images/lady_gaga_-_disco_heaven_1.png" />
-                    <div class="last-album-bottom">
-                        <p class="last-album-artist">Lady Gaga</p>
-                        <p class="last-album-name">Disco Heaven</p>
+                    <img src="images/alboms_images/lady_gaga_-_the_fame_monster_2.png" />
+                    <div class="last-album-details">
+                        <div class="album-artist">Artist name</div>
+                        <div class="album-name">Album name</div>
                     </div>
                 </div>
-                <div class="lasts-albums">
-                    <div class="main-3-list-albums">
-                        <img src="images/alboms_images/a_day_to_remember_-_what_separates_me_from_you_1.png" />
-                        <div class="lasts-albums-bottom">
-                            <p class="lasts-albums-artist">Artist name</p>
-                            <p class="lasts-albums-name">Album name</p>
+                <div class="lasts-albums-list">
+                    <div class="album-small-banner">
+                        <img src="images/alboms_images/tabla_beat_science_1.png" />
+                        <div class="lasts-albums-details">
+                            <div class="album-artist">Artist name</div>
+                            <div class="album-name">Album name</div>
                         </div>
                     </div>
-                    <div class="main-3-list-albums">
+                    <div class="album-small-banner">
+                        <img src="images/alboms_images/a_day_to_remember_-_what_separates_me_from_you_1.png" />
+                        <div class="lasts-albums-details">
+                            <div class="album-artist">Artist name</div>
+                            <div class="album-name">Album name</div>
+                        </div>
+                    </div>
+                    <div class="album-small-banner">
                         <img src="images/alboms_images/acdc_-_ballbreaker_1.png" />
+                        <div class="lasts-albums-details">
+                            <div class="album-artist">Artist name</div>
+                            <div class="album-name">Album name</div>
+                        </div>
                     </div>
-                    <div class="main-3-list-albums">
+                    <div class="album-small-banner">
                         <img src="images/alboms_images/acdc_s_iron_man_2_soundtrack_1.png" />
+                        <div class="lasts-albums-details">
+                            <div class="album-artist">Artist name</div>
+                            <div class="album-name">Album name</div>
+                        </div>
                     </div>
-                    <div class="main-3-list-albums">
+                    <div class="album-small-banner">
                         <img src="images/alboms_images/anthrax_-_fistful_of_metal_1.png" />
+                        <div class="lasts-albums-details">
+                            <div class="album-artist">Artist name</div>
+                            <div class="album-name">Album name</div>
+                        </div>
                     </div>
-                    <div class="main-3-list-albums">
+                    <div class="album-small-banner">
                         <img src="images/alboms_images/black_eyed_peas_-_black_eyed_peas_triple_pack_box_1.png" />
+                        <div class="lasts-albums-details">
+                            <div class="album-artist">Artist name</div>
+                            <div class="album-name">Album name</div>
+                        </div>
                     </div>
-                    <div class="main-3-list-albums">
-                        <img src="images/alboms_images/bob_dylan_-_a_bird_s_nest_in_your_hair_1.png" />
-                    </div>
-                    <div class="main-3-list-albums">
+                    <div class="album-small-banner">
                         <img src="images/alboms_images/bob_dylan_-_one_night_only_1.png" />
+                        <div class="lasts-albums-details">
+                            <div class="album-artist">Artist name</div>
+                            <div class="album-name">Album name</div>
+                        </div>
                     </div>
-                    <div class="main-3-list-albums">
-                        <img src="images/alboms_images/bon_jovi_-_greatest_hits_the_ultimate_collect_music_1.png" />
+                    <div class="album-small-banner">
+                        <img src="images/alboms_images/bundy_country_2007_1.png" />
+                        <div class="lasts-albums-details">
+                            <div class="album-artist">Artist name</div>
+                            <div class="album-name">Album name</div>
+                        </div>
                     </div>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div id="main-4">
+                <div class="main">
+                    sdsd
                 </div>
             </div>
         </div> 
