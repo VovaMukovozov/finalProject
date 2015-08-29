@@ -1,5 +1,5 @@
 <?php
-// namespace core\Model;
+
 require_once dirname( __FILE__ ) . '/../lib/DB.class.php';
 
 class Model {

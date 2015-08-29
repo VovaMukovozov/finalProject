@@ -4,7 +4,7 @@ class DB {
 
     public static function getInstance() {
 		if ( !self::$instance ) {
-			self::$instance = new mysqli("localhost", "root", "", "musicstore");
+			self::$instance = new mysqli("localhost", "root", "admin1234", "musicstore");
 		}
 
 		return self::$instance;
