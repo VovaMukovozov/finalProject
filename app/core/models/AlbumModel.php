@@ -34,7 +34,10 @@ class AlbumModel extends Model {
             $results = $this->_db->query("SELECT * FROM albums WHERE album_id = $id ");
         }
         else{
-            $results = $this->_db->query("SELECT * FROM albums");
+            $results = $this->_db->query("SELECT albums.album_id, albums.album_name, albums.album_artist, albums.album_price, albums_stock.album_stock, genres_to_albums.genre_id "
+                    . " FROM albums "
+                    . "INNER JOIN albums_stock ON albums_stock.album_id = albums.album_id "
+                    . "INNER JOIN genres_to_albums ON genres_to_albums.album_id = albums.album_id;");
         }
         if ($results) {
             $albums = [];
