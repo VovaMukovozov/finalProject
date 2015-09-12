@@ -1,11 +1,13 @@
 <?php
 require 'Slim/Slim.php';
 require_once '../Controllers/AlbumRESTController.php';
+require_once '../Controllers/UserRESTController.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 
 
 $album = new AlbumRESTController();
+$newUser = new UserRESTController();
 // GET route
 $app->get('/', function () {
       echo json_encode( array( "error" => 1, "msg" => "No method selected" ) );
@@ -21,10 +23,10 @@ $app->get('/album', function() use ( $album ) {
     echo ($albums);
 });
 // POST route
-$app->post(
-    '/post',
-    function () {
-        echo 'This is a POST route';
+$app->post('/newUser',function() use($app, $newUser) {
+    $request = $app->request->getBody();
+    $user = $newUser->registerUser($request);
+        echo($user);
     }
 );
 

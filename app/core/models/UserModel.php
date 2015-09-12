@@ -3,12 +3,30 @@
 require_once dirname(__FILE__) . '/Model.php';
 
 class UserModel extends Model {
-     /**
+
+    /**
      * parent construct
      * @return void
      */
     public function __construct() {
         parent::__construct();
+    }
+
+    /**
+     * check if email exist
+     * @param array $data
+     * @return $success
+     */
+    public function checkEmail($email) {
+        $success = $this->_db->query("SELECT user_email FROM users WHERE user_email = '$email'");
+        if ($success) {
+            $user_email = [];
+            while ($row = $success->fetch_assoc()) {
+                $user_email[] = $row;
+            }
+            return $user_email;
+        }
+        return false;
     }
     /**
      * create new user
@@ -16,9 +34,10 @@ class UserModel extends Model {
      * @return $success
      */
     public function createUser($data) {
-        $success = $this->_db->query("INSERT INTO users (user_email, user_password, user_firstname, user_lastname) VALUES ('".$data['email']."','".$data['pass']."','".$data['first_name']."','".$data['last_name']."')"); 
+        $success = $this->_db->query("INSERT INTO users (user_email, user_password, user_firstname, user_lastname) VALUES ('" . $data['email'] . "','" . $data['password'] . "','" . $data['firstname'] . "','" . $data['lastname'] . "')");
         return $success;
     }
+
     /**
      * get  user
      * @param int $id
@@ -35,7 +54,7 @@ class UserModel extends Model {
         }
         return NULL;
     }
-    
+
     /**
      * update  user
      * @param int $id, array $data
@@ -45,7 +64,7 @@ class UserModel extends Model {
         $success = $this->_db->query("UPDATE users SET user_email = '".$data['email']."', user_password = '".$data['pass']."', user_firstname = '".$data['first_name']."', user_lastname = '".$data['last_name']."' WHERE user_id = '$id'"); 
         return $success;
     }
-    
+
     /**
      * delete  user
      * @param int $id

@@ -35,15 +35,28 @@ class AlbumController extends Controller {
         }
     }
 
+     /**
+     * delete album
+     * @param integer $id
+     * @return array success true/false
+     *   
+     */
     public function deleteAlbum($id) {
         $delete = $this->model->deleteAlbum($id);
 
-        if ($delete)
-            return array("success" => true);
+        if ($delete){
+            return [true];
+        }
 
-        return array("error" => 1, "msg" => "Failed to delete");
+        return [false, "Failed to delete"];
     }
 
+     /**
+     * create new album
+     * @param array $details 
+     * @return success true/false
+     *   
+     */
     public function insertNewAlbum($details) {
         // Some validation about the input
         // If validation... continue. else! return false;
