@@ -27,7 +27,7 @@ class AlbumController extends Controller {
         try {
             $albums = $this->model->getAllAlbums();
             if ($albums !== NULL) {
-                return array("albums" => $albums);
+                return ["albums" => $albums];
             } else
                 throw new Exception();
         } catch (Exception $e) {

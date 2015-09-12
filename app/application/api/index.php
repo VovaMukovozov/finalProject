@@ -2,20 +2,23 @@
 require 'Slim/Slim.php';
 require_once '../Controllers/AlbumRESTController.php';
 require_once '../Controllers/UserRESTController.php';
+require_once '../Controllers/GenreRESTController.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 
 
 $album = new AlbumRESTController();
 $newUser = new UserRESTController();
+$genre = new GenreRESTController();
 // GET route
 $app->get('/', function () {
       echo json_encode( array( "error" => 1, "msg" => "No method selected" ) );
     }
 );
 
-$app->get('/categories', function(){
-    echo json_encode( array( "error" => 1, "msg" => "yes" ) );
+$app->get('/categories', function() use($genre){
+    $genres = $genre->getAllGenres();
+    echo ($genres);
 });
 
 $app->get('/album', function() use ( $album ) {
