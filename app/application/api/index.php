@@ -4,6 +4,7 @@ require_once '../Controllers/AlbumRESTController.php';
 require_once '../Controllers/UserRESTController.php';
 require_once '../Controllers/GenreRESTController.php';
 require_once '../Controllers/SongRESTController.php';
+require_once '../Controllers/SerchRESTController.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 
@@ -11,6 +12,8 @@ $song = new SongRESTController();
 $album = new AlbumRESTController();
 $newUser = new UserRESTController();
 $genre = new GenreRESTController();
+$search = new SearchRESTController();
+
 
 // GET route
 $app->get('/', function () {
@@ -22,6 +25,12 @@ $app->get('/songs',function ()use ($app, $song){
     $request=$app->request->getBody();
     $songs = $song->getSong($request);
     echo($songs);
+});
+
+$app->get('/search',function()use($app,$search){
+    $request = $app->request->getBody();
+    $album = $search->searchAlbum($request);
+    echo($album);
 });
 
 $app->get('/categories', function() use($genre){
