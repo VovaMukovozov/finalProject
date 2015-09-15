@@ -52,13 +52,15 @@ require_once dirname(__FILE__) . '/Model.php';
     }
         /**
          * 
-         * @param type $id
+         * @param type $album_id
          * @return $songs 
          * 
          */
-    public function getSongs($id){
-        if($id){
-           $results = $this->_db->query("SELECT * FROM songs WHERE song_id = $id ");   
+    public function getSongs($album_id){
+        if($album_id){
+           $results = $this->_db->query("SELECT song_id , song_name , song_duration , song_path"
+                   . " FROM songs WHERE song_id IN (SELECT song_id FROM songs_to_albums WHERE "
+                   . "album_id = $album_id ) ");   
           }
           else{
            $results = $this->_db->query("SELECT * FROM songs "); 

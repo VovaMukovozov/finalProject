@@ -3,18 +3,26 @@ require 'Slim/Slim.php';
 require_once '../Controllers/AlbumRESTController.php';
 require_once '../Controllers/UserRESTController.php';
 require_once '../Controllers/GenreRESTController.php';
+require_once '../Controllers/SongRESTController.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 
-
+$song = new SongRESTController();
 $album = new AlbumRESTController();
 $newUser = new UserRESTController();
 $genre = new GenreRESTController();
+
 // GET route
 $app->get('/', function () {
       echo json_encode( array( "error" => 1, "msg" => "No method selected" ) );
     }
 );
+
+$app->get('/songs',function ()use ($app, $song){
+    $request=$app->request->getBody();
+    $songs = $song->getSong($request);
+    echo($songs);
+});
 
 $app->get('/categories', function() use($genre){
     $genres = $genre->getAllGenres();
