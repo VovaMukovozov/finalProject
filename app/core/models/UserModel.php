@@ -14,17 +14,19 @@ class UserModel extends Model {
 
     /**
      * check if email exist
-     * @param array $data
+     * @param array $email
      * @return $success
      */
-    public function checkEmail($email) {
-        $success = $this->_db->query("SELECT user_email FROM users WHERE user_email = '$email'");
+    public function loginUser($data) {
+        $email = $data['email'];
+        $pass = $data['password'];
+        $success = $this->_db->query("SELECT user_id FROM users WHERE user_email = '$email' AND user_password = '$pass'");
         if ($success) {
-            $user_email = [];
+            $user_id = [];
             while ($row = $success->fetch_assoc()) {
-                $user_email[] = $row;
+                $user_id[] = $row;
             }
-            return $user_email;
+            return $user_id;
         }
         return false;
     }
@@ -34,7 +36,7 @@ class UserModel extends Model {
      * @return $success
      */
     public function createUser($data) {
-        $success = $this->_db->query("INSERT INTO users (user_email, user_password, user_firstname, user_lastname) VALUES ('" . $data['email'] . "','" . $data['password'] . "','" . $data['firstname'] . "','" . $data['lastname'] . "')");
+        $success = $this->_db->query("INSERT INTO users (user_email, user_password, user_firstname, user_lastname) VALUES ('" . $data['email'] . "','" . $data['password'] . "','" . $data['firstName'] . "','" . $data['lastName'] . "')");
         return $success;
     }
 

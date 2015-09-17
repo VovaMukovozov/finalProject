@@ -30,5 +30,17 @@ class UserRESTController extends UserController {
         return $this->buildAnswer($newUser[0],$newUser[1]);
 
     }
+    
+    /**
+     * login user
+     * 
+     * @return json 
+     *   
+     */
+    public function loginUser($input) {
+        $User = parent::loginUser(json_decode($input, true));
+        return $this->buildAnswer($User[0],$User[1]);
+    }
+
 
 }
