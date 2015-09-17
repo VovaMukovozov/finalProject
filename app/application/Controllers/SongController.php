@@ -37,12 +37,13 @@ class SongController extends Controller{
             
             if($songs!==NULL){
                  return ["songs" => $songs];
-            }  else 
+            }  else{ 
                  throw new Exception();
+            }
         }  catch (Exception $e){
-                  return false;
+                  return [false];
         }     
-   }
+    }
 
    
 

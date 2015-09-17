@@ -156,24 +156,22 @@ class AlbumModel extends Model {
     }
     
    /**
-    * get albums by multi-parametrs query
-    * @params $artistname $description $year $longdescription 
+    * search albums by name and artist
+    * @params $album_name $album_artist  
     * @return $albums 
     *   
     */ 
     
-    public function getAlbumsByAll($artistname = false, $description = false, $year =false, $longdescription=false){
+    public function getAlbumsForSearch($album_name,$album_artist){ 
        
-        if(!empty($artistname) && !empty($description) &&!empty($year) &&!empty($longdescription)){
-            
-            $results=$this->_db->query("SELECT * FROM albums WHERE album_artist ='$artistname'AND"
-                    . "album_description LIKE%'$description'%"
-                    . "AND album_release_year = $year
-                       AND album_long_description LIKE %'$longdescription'%");
-        }
-        if(empty($artistname) ||empty($description)||empty($year) ||empty($longdescription)){
-          //  $results=$this->_db->query();
-        }
+         $results = $this->_db->query("SELECT albums.album_id, albums.album_name, albums.album_artist, albums.album_price, albums_stock.album_stock, genres_to_albums.genre_id, images.image_path "
+                    . " FROM albums "
+                    . "INNER JOIN albums_stock ON albums_stock.album_id = albums.album_id "
+                    . "INNER JOIN genres_to_albums ON genres_to_albums.album_id = albums.album_id "
+                    . "INNER JOIN images_to_albums ON images_to_albums.album_id = albums.album_id "
+                    . "INNER JOIN images ON images_to_albums.image_id = images.image_id"
+                    . "WHERE albums.album_name LIKE %'$album_name'% AND"
+                    . " albums.album_artist LIKE %'$album_artist'% ");
         
         if ($results) {
                 $albums = [];
@@ -186,5 +184,4 @@ class AlbumModel extends Model {
                 return NULL;
     
         }
-    
  }
