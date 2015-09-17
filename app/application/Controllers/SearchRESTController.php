@@ -22,13 +22,13 @@ class SearchRESTController extends SearchController {
          * @param array $input
          * @return json 
          */
-   public function getAlbums($input){
+   public function searchAlbum($input){
         $albums = parent::searchAlbum(json_decode($input,true));
-        
         if($albums){
-            $this->buildAnswer(true, 'Ok',array($albums));
+           return $this->buildAnswer(true, 'Ok',array($albums));
         }else{
-            $this->buildAnswer(false, 'Cannot fetch albums at this time');
+           return $this->buildAnswer(false, 'Cannot fetch albums at this time');
         }
+        
    }
 }

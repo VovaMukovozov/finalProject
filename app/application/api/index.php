@@ -5,7 +5,8 @@ require_once '../Controllers/AlbumRESTController.php';
 require_once '../Controllers/UserRESTController.php';
 require_once '../Controllers/GenreRESTController.php';
 require_once '../Controllers/SongRESTController.php';
-require_once '../Controllers/SerchRESTController.php';
+require_once '../Controllers/SearchRESTController.php';
+require_once '../Controllers/OrderRESTController.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 
@@ -29,7 +30,7 @@ $app->get('/songs', function ()use ($app, $song) {
     echo($songs);
 });
 
-$app->get('/search',function()use($app,$search){
+$app->post('/search',function()use($app,$search){
     $request = $app->request->getBody();
     $album = $search->searchAlbum($request);
     echo($album);
