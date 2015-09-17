@@ -23,16 +23,15 @@ class OrderController extends Controller {
      */
     public function payment($input) {
         $input['order_created'] = date("Y-m-d H:i:s");
-//        print_r($input['order_created']);
-//        die();
-//        try {
+        $input['user_id'] = 2;
+        try {
             $newOrder = $this->model->createOrder($input);
             if ($newOrder !== NULL) {
                 return [true, 'Order created'];
-//            } else
-//                throw new Exception();
-//        } catch (Exception $e) {
-//            return [false, 'Please try again'];
+            } else
+                throw new Exception();
+        } catch (Exception $e) {
+            return [false, 'Please try again'];
         }
     }
 

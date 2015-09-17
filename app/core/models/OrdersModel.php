@@ -37,10 +37,11 @@ class OrdersModel extends Model {
                     $orders[] = $row;
                 }
             }
-//            $purchase = $this->buyAlbum($id_order, $data['album_id']); // album per order
+            foreach ($data['albums_id'] as $album_id){
+               $purchase = $this->buyAlbum($orders[0]['order_id'], $album_id); // album per order
+            }
         }
-        print_r($orders[0]['order_id']);
-        die();
+
         return $purchase;
     }
 
@@ -213,7 +214,13 @@ class OrdersModel extends Model {
     public function buyAlbum($id_order, $id_album) {
         $succ = $this->_db->query("INSERT INTO orders_to_albums(order_id, album_id) "
                 . "VALUES (" . $id_order . "," . $id_album . ")");
-        return $succ;
+        if($succ){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
     }
 
 }

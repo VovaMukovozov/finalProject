@@ -30,13 +30,7 @@ $app->get('/songs', function ()use ($app, $song) {
     echo($songs);
 });
 
-$app->post('/search',function()use($app,$search){
-    $request = $app->request->getBody();
-    $album = $search->searchAlbum($request);
-    echo($album);
-});
-
-$app->get('/categories', function() use($genre){
+$app->get('/categories', function() use($genre) {
     $genres = $genre->getAllGenres();
     echo ($genres);
 });
@@ -52,6 +46,12 @@ $app->post('/newUser', function() use($app, $newUser) {
     echo($user);
 }
 );
+
+$app->post('/search', function()use($app, $search) {
+    $request = $app->request->getBody();
+    $album = $search->searchAlbum($request);
+    echo($album);
+});
 
 $app->post('/order', function() use($app, $order) {
     $request = $app->request->getBody();
