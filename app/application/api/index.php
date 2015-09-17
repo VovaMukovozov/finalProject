@@ -1,9 +1,11 @@
 <?php
+
 require 'Slim/Slim.php';
 require_once '../Controllers/AlbumRESTController.php';
 require_once '../Controllers/UserRESTController.php';
 require_once '../Controllers/GenreRESTController.php';
 require_once '../Controllers/SongRESTController.php';
+require_once '../Controllers/OrderRESTController.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 
@@ -11,20 +13,21 @@ $song = new SongRESTController();
 $album = new AlbumRESTController();
 $newUser = new UserRESTController();
 $genre = new GenreRESTController();
+$order = new OrderRESTController();
 
 // GET route
 $app->get('/', function () {
-      echo json_encode( array( "error" => 1, "msg" => "No method selected" ) );
-    }
+    echo json_encode(array("error" => 1, "msg" => "No method selected"));
+}
 );
 
-$app->get('/songs',function ()use ($app, $song){
-    $request=$app->request->getBody();
+$app->get('/songs', function ()use ($app, $song) {
+    $request = $app->request->getBody();
     $songs = $song->getSong($request);
     echo($songs);
 });
 
-$app->get('/categories', function() use($genre){
+$app->get('/categories', function() use($genre) {
     $genres = $genre->getAllGenres();
     echo ($genres);
 });
@@ -34,19 +37,25 @@ $app->get('/album', function() use ( $album ) {
     echo ($albums);
 });
 // POST route
-$app->post('/newUser',function() use($app, $newUser) {
+$app->post('/newUser', function() use($app, $newUser) {
     $request = $app->request->getBody();
     $user = $newUser->registerUser($request);
-        echo($user);
-    }
+    echo($user);
+}
+);
+
+$app->post('/order', function() use($app, $order) {
+    $request = $app->request->getBody();
+    $orders = $order->payment($request);
+    echo($orders);
+}
 );
 
 // PUT route
 $app->put(
-    '/put',
-    function () {
-        echo 'This is a PUT route';
-    }
+        '/put', function () {
+    echo 'This is a PUT route';
+}
 );
 
 // PATCH route
@@ -56,10 +65,9 @@ $app->patch('/patch', function () {
 
 // DELETE route
 $app->delete(
-    '/delete',
-    function () {
-        echo 'This is a DELETE route';
-    }
+        '/delete', function () {
+    echo 'This is a DELETE route';
+}
 );
 
 /**
