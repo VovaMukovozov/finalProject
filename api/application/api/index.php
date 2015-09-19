@@ -38,7 +38,7 @@ $app->get('/categories', function() use($genre) {
 
 $app->get('/album', function() use ( $album ) {
     $albums = $album->getAllAlbums();
-    echo ($albums);
+    echo $albums;
 });
 $app->get('/session', function() {
     if (isset($_SESSION['user_id'])) {

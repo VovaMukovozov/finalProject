@@ -14,7 +14,7 @@ class UserModel extends Model {
 
     /**
      * check if email exist
-     * @param array $email
+     * @param array $data
      * @return $success
      */
     public function loginUser($data) {
@@ -30,6 +30,24 @@ class UserModel extends Model {
         }
         return false;
     }
+
+    /**
+     * check if email exist
+     * @param array $email
+     * @return $success
+     */
+    public function checkEmail($email) {
+        $success = $this->_db->query("SELECT user_email FROM users WHERE user_email = '$email'");
+        if ($success) {
+            $user_email = [];
+            while ($row = $success->fetch_assoc()) {
+                $user_email[] = $row;
+            }
+            return $user_email;
+        }
+        return false;
+    }
+
     /**
      * create new user
      * @param array $data
@@ -63,7 +81,7 @@ class UserModel extends Model {
      * @return $success
      */
     public function updateUser($id, $data) {
-        $success = $this->_db->query("UPDATE users SET user_email = '".$data['email']."', user_password = '".$data['pass']."', user_firstname = '".$data['first_name']."', user_lastname = '".$data['last_name']."' WHERE user_id = '$id'"); 
+        $success = $this->_db->query("UPDATE users SET user_email = '" . $data['email'] . "', user_password = '" . $data['pass'] . "', user_firstname = '" . $data['first_name'] . "', user_lastname = '" . $data['last_name'] . "' WHERE user_id = '$id'");
         return $success;
     }
 

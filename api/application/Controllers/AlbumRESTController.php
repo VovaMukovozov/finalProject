@@ -12,7 +12,7 @@ class AlbumRESTController extends AlbumController {
     protected function buildAnswer($success, $message, $data = null) {
         return json_encode([
         "success" => $success,
-        "message" => $message,
+        "message" => $message,  
         "data" => $data
         ]);
     }
@@ -25,7 +25,7 @@ class AlbumRESTController extends AlbumController {
     public function getAllAlbums() {
         $albums = parent::getAllAlbums();
         if ($albums) {
-            return $this->buildAnswer(true, 'Ok', array($albums));
+            return $this->buildAnswer(true, 'Ok', $albums['albums']);
         } else {
             return $this->buildAnswer(false, 'Cannot fetch albums at this time');
         }
