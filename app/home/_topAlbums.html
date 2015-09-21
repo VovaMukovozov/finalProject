@@ -1,0 +1,44 @@
+<div class="content-top">
+    <div class="col-1">
+        <div class="big-banner" 
+             ng-repeat="album in albumsArr | orderBy: '-album_id' | limitTo: 1" 
+             ng-mouseover="bigBannerHover()" 
+             ng-mouseleave="bigBannerLeave()">
+            <img class="pic" ng-src="{{ album.image_path }}" 
+                 ng-click="toAlbum(album.album_id, album.genre_id)" />
+            <div class="details" ng-class="{'sub-details-view': bigBannerSubDetails}">
+                <p class="album-name">{{ album.album_name }}</p>
+                <p class="album-artist">{{ album.album_artist }}</p>
+                <div class="sub-details" ng-show="bigBannerSubDetails">
+                    <div class="price">${{ album.album_price }}</div>
+                    <img class="cart" src="images/shopping232.png" 
+                         ng-click="addToCart(album, 1)" />
+                    <img class="info" src="images/info27.png" 
+                         ng-click="toAlbum(album.album_id, album.genre)" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="small-banners" 
+             ng-repeat="albums in albumsArr | orderBy: '-album_id' | limitTo: 8: 1" 
+             ng-mouseover="smallBannerHover($index)"
+             ng-mouseleave="smallBannerLeave()">
+            <img class="pic" ng-src="{{ albums.image_path }}" 
+                 ng-click="toAlbum(albums.album_id, albums.genre_id)" />
+            <div class="details" ng-class="{'sub-details-view': activeValue === $index}">
+                <p class="album-name">{{ albums.album_name | limitTo: 20 }}</p>
+                <p class="album-artist">{{ albums.album_artist | limitTo: 20 }}</p>
+                <div class="sub-details" ng-show="activeValue === $index">
+                    <div class="price">${{ albums.album_price }}</div>
+                    <img class="cart" src="images/shopping232.png" 
+                         ng-click="addToCart(albums, 1)" />
+                    <img class="info" src="images/info27.png" 
+                         ng-click="toAlbum(albums.album_id, albums.genre)" />
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div style="clear: both;"></div>
+</div>

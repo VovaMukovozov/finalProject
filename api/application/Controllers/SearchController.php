@@ -23,7 +23,7 @@ class SearchController extends Controller {
         try {
             $albums = $this->model->getAlbumsForSearch($input['search']);
             if ($albums !== NULL) {
-                return ["albums" => $albums];
+                return $albums;
             } else {
                 throw new Exception();
             }

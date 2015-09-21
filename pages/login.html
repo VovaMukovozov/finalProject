@@ -1,0 +1,161 @@
+<div class="main margin" ng-controller="login">
+    <div class="top-line">
+        Login or Create an Account
+    </div>
+    <div class="reg-block">
+        <div class="create-account-block">
+            <h2 class="title">NEW CUSTOMERS</h2>
+            <p class="description">By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+            <input class="button-login" type="button" value="Create an Account" ng-click="popup = true" />
+        </div>
+        <div class="login-block">
+            <h2 class="title">REGISTERED CUSTOMERS</h2>
+            <p class="description">If you have an account with us, please log in.</p>
+            <form novalidate class="loginForm css-form" name="loginForm">
+                <div>
+                    <label>Email Address<span style="color: red;">*</span></label><br />
+                    <input type="email" 
+                           placeholder="Email" 
+                           name="email"
+                           required
+                           ng-model="user.email" 
+                           value="{{ user.email }}" 
+                           ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" 
+                           ng-class="{'error': loginForm.$submitted && loginForm.email.$error.required}"/>
+                    
+                    <div ng-show="loginForm.$submitted || loginForm.email.$touched">
+                        <div class="formError" ng-show="loginForm.email.$error.required">
+                            Email is required!
+                        </div>
+                    </div>
+                    <div ng-show="loginForm.$submitted || loginForm.email.$touched">
+                        <div class="formError" ng-show="loginForm.email.$error.pattern">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label>Password<span style="color: red;">*</span></label><br />
+                    <input type="password" 
+                           placeholder="Password" 
+                           ng-model="user.password"
+                           name="password"
+                           required 
+                           
+                           ng-class="{'error': loginForm.$submitted && loginForm.password.$error.required}" />
+                    
+                    <div ng-show="loginForm.$submitted || loginForm.password.$touched">
+                        <div class="formError" ng-show="loginForm.password.$error.required">
+                            Password is required!
+                        </div>
+                    </div>
+                    <div ng-show="loginForm.$submitted || loginForm.password.$touched">
+                        <div class="formError" ng-show="loginForm.password.$error.pattern">
+                            Use minimum 6 characters and minimum one capital letter
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="reqFields">*Required Fields</p>
+                    <input type="submit" value="Log in" ng-click="logIn()" />
+                </div>
+            </form>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    
+    <div id="registration-popup" ng-show="popup" ng-class="{'popupOpacity': popupOpacity}">
+        <span class="close-popup" ng-click="popup = false">X</span>
+        <h3>Registration</h3>
+        <form novalidate name="regForm" class="css-form" ng-show="showForm">
+            <h4>Profile Informations</h4>
+            <input type="text" 
+                   placeholder="First Name" 
+                   name="firstName" 
+                   ng-model="newUser.firstName" 
+                   required 
+                   ng-pattern="/^[a-zA-Z]{2,12}$/" 
+                   ng-class="{'error': regForm.$submitted && regForm.firstName.$error.required}" />
+            <div ng-show="regForm.$submitted || regForm.firstName.$touched">
+                <div class="formError" ng-show="regForm.firstName.$error.required">First name is required!</div>
+            </div>
+            <div ng-show="regForm.$submitted || regForm.firstName.$touched">
+                <div class="formError" ng-show="regForm.firstName.$error.pattern">Length range 2-12 letters</div>
+            </div>
+            
+            <input type="text" 
+                   placeholder="Last Name" 
+                   ng-model="newUser.lastName" 
+                   name="lastName"
+                   required 
+                   ng-pattern="/^[a-zA-Z]{2,12}$/"
+                   ng-class="{'error': regForm.$submitted && regForm.lastName.$error.required}" />
+            <div ng-show="regForm.$submitted || regForm.lastName.$touched">
+                <div class="formError" ng-show="regForm.lastName.$error.required">Last name is required!</div>
+            </div>
+            <div ng-show="regForm.$submitted || regForm.lastName.$touched">
+                <div class="formError" ng-show="regForm.lastName.$error.pattern">Length range 2-12 letters</div>
+            </div>
+            
+            <h4>Login Datas</h4>
+            <input type="email" 
+                   placeholder="E-mail Address" 
+                   ng-model="newUser.email" 
+                   required 
+                   name="email"
+                   ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"
+                   ng-class="{'error': regForm.$submitted && regForm.email.$error.required}" />
+            <div ng-show="regForm.$submitted || regForm.email.$touched">
+                <div class="formError" ng-show="regForm.email.$error.required">Email is required!</div>
+            </div>
+            <div ng-show="regForm.$submitted || regForm.email.$touched">
+                <div class="formError" ng-show="regForm.email.$error.pattern">
+                    Please enter a valid email address.
+                </div>
+            </div>
+            
+            <input type="password" 
+                   placeholder="Password" 
+                   ng-model="newUser.password" 
+                   required
+                   name="password" 
+                   ng-pattern="/^(?=.*[A-Z])[a-zA-Z0-9]{6,}$/"
+                   ng-class="{'error': regForm.$submitted && regForm.password.$error.required}" />
+            <div ng-show="regForm.$submitted || regForm.password.$touched">
+                <div class="formError" ng-show="regForm.password.$error.required">Password is required!</div>
+            </div>
+            <div ng-show="regForm.$submitted || regForm.password.$touched">
+                <div class="formError" ng-show="regForm.password.$error.pattern">
+                    Use minimum 6 characters and minimum one capital letter
+                </div>
+            </div>
+            
+            <input type="password" 
+                   placeholder="Password confirmation" 
+                   ng-model="newUser.confirmPassword" 
+                   required
+                   name="confPassword" 
+                   ng-class="{'error': regForm.$submitted && regForm.confPassword.$error.required}" />
+            <div ng-show="regForm.$submitted || regForm.confPassword.$touched">
+                <div class="formError" ng-show="regForm.confPassword.$error.required">
+                    Confirm password is required!
+                </div>
+            </div>
+            <div ng-show="regForm.$submitted || regForm.confPassword.$touched">
+                <div class="formError" ng-show="passwordValid">
+                    Confirm password does not match the password
+                </div>
+            </div>
+            
+            <input type="submit" value="Register" ng-click="addUser()" />
+        </form>
+        <div class="spinner" ng-show="loader">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+        <p style="margin-left: 20px;" ng-show="regSuccess">Your registration has been successful</p>
+    </div>
+</div>

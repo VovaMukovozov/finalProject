@@ -33,7 +33,7 @@ class AlbumModel extends Model {
         if ($id) {
             $results = $this->_db->query("SELECT * FROM albums WHERE album_id = $id ");
         } else {
-            $results = $this->_db->query("SELECT albums.album_id, albums.album_name, albums.album_artist, albums.album_price, albums_stock.album_stock, albums.album_description, albums.album_long_description, genres_to_albums.genre_id, images.image_path "
+            $results = $this->_db->query("SELECT albums.album_id, albums.album_name, albums.album_artist, albums.album_price, albums_stock.album_stock, albums.album_release_year, albums.album_description, albums.album_long_description, genres_to_albums.genre_id, images.image_path "
                     . " FROM albums "
                     . "INNER JOIN albums_stock ON albums_stock.album_id = albums.album_id "
                     . "INNER JOIN genres_to_albums ON genres_to_albums.album_id = albums.album_id "
@@ -158,7 +158,7 @@ class AlbumModel extends Model {
      */
     public function getAlbumsForSearch($search) {
 
-        $results = $this->_db->query("SELECT albums.album_id, albums.album_name, albums.album_artist, albums.album_price, albums_stock.album_stock, genres_to_albums.genre_id, images.image_path "
+        $results = $this->_db->query("SELECT albums.album_id, albums.album_name, albums.album_artist, albums.album_price, albums.album_release_year, albums_stock.album_stock, genres_to_albums.genre_id, images.image_path "
                 . " FROM albums "
                 . "INNER JOIN albums_stock ON albums_stock.album_id = albums.album_id "
                 . "INNER JOIN genres_to_albums ON genres_to_albums.album_id = albums.album_id "

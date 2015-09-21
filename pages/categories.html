@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="categories-top-line">
+        <a href="#/home">Home</a><span>></span>
+        <a class="current-nav" href="#/category/{{category.genre_id}}">{{category.genre_name}}</a>
+    </div>
+    <div class="categories">
+        <div id="side-bar">
+        <categories-music></categories-music>
+        <cart-side></cart-side>
+        </div>
+        <div id="content">
+            <div class="categories-line">{{ category.genre_name }} ({{ numItems }})</div>
+            <div class="categories-albums">
+                <div class="wap">
+                    <div class="categories-banners" 
+                         ng-repeat="albums in albumsByCategory | orderBy: '-album_id'" >
+                        <img class="pic" ng-src="{{albums.image_path}}" 
+                             ng-click="toAlbum(albums.album_id, albums.genre_id)" />
+                        <div class="details">
+                            <p class="title">{{ albums.album_artist}} - 
+                                <span>{{ albums.album_name}}</span>
+                            </p>
+                            <p>{{ albums.album_description | limitTo: 30 }}...</p>
+                            <div class="sub-details">
+                                <div class="price">${{ albums.album_price }}</div>
+                                <img class="cart" src="images/shopping232.png" 
+                                     ng-click="addToCart(albums, 1)" />
+                                <img class="info" src="images/info27.png" 
+                                     ng-click="toAlbum(albums.album_id, albums.genre_id)" />
+                            </div>
+                            <div class="add-to-wishlist" ng-click="addToWishlist(albums)">Add to wishlist</div>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

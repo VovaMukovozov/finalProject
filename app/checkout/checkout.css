@@ -1,0 +1,257 @@
+.checkout {
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.checkout .left-col {
+    width: 870px;
+    float: left;
+}
+
+.checkout .right-col {
+    width: 300px;
+    margin-left: 900px;
+}
+
+.checkout input[type="submit"] {
+    position: absolute;
+    background: #000;
+    padding: 10px 10px;
+    color: #fff;
+    border: 1px solid #000;
+    right: 10px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.checkout .left-col .top-line {
+    height: 30px;
+    background: #fff;
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+}
+
+.checkout .right-col .progress {
+    font-size: 25px;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+}
+
+.checkout .left-col .br {
+    margin-bottom: 20px;
+}
+
+.checkout .left-col .title {
+    background: #333;
+    padding: 10px;
+    color: #fff;
+}
+
+.checkout .left-col .title span {
+    border-radius: 50%;
+    background: red;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.checkout .left-col .br .form-1 {
+    border: 2px solid #ddd;
+    margin: 10px 0;
+    padding: 30px 0 30px 20px;
+    position: relative;
+}
+
+.form-1 .space {
+    margin-bottom: 20px;
+}
+
+.form-1 span {
+    color: red;
+}
+
+.form-1 .address {
+    width: 627px;
+}
+
+.form-1 .other-input {
+    width: 300px;
+}
+
+.form-1 div:nth-child(2) {
+    float: left;
+    margin-right: 20px;
+}
+
+.form-1 input[type="text"] {
+    height: 30px;
+    border: 1px solid #ddd;
+    padding-left: 5px;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.textError {
+    color: red;
+    font-size: 14px;
+}
+
+.required {
+    background: red;
+}
+
+
+.form-2 {
+    border: 2px solid #ddd;
+    margin: 10px 0;
+    padding: 30px 0 30px 20px;
+    position: relative;
+    min-height: 150px;
+}
+
+.form-2 .space {
+    margin-bottom: 10px;
+}
+
+.form-2 input[type="button"] {
+    position: absolute;
+    background: #000;
+    padding: 10px 10px;
+    color: #fff;
+    border: 1px solid #000;
+    right: 10px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.form-2 .formCard {
+    margin-top: 30px;
+}
+
+.form-2 .formCard span {
+    color: red;
+}
+
+.form-2 .formCard input[type="text"] {
+    height: 30px;
+    width: 300px;
+    border: 1px solid #ddd;
+    padding-left: 5px;
+    margin-top: 5px;
+}
+
+.form-2 .formCard select {
+    height: 30px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+}
+
+.form-3 {
+    border: 2px solid #ddd;
+    margin: 10px 0;
+    position: relative;
+    min-height: 150px;
+    border-bottom: 1px solid #ddd;
+}
+
+.div-table {
+    display: table-cell;
+    height: 50px;
+    width: 870px;
+}
+
+.div-table .table-row {
+    height: 50px;
+    clear: both;
+    border-bottom: 1px solid #ddd;
+}
+
+.div-table .table-row .cal {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.div-table .table-row .cal:nth-child(-n+3) {
+    border-right: 1px solid #ddd;
+}
+
+.div-table .table-row .cal .head {
+    font-weight: bold;
+}
+
+.div-table .table-row .cal:nth-child(1) {
+    width: 497px;
+    text-align: left;
+}
+
+.div-table .table-row .cal:nth-child(1) p {
+    margin-left: 20px;
+}
+
+.div-table .table-row .cal:nth-child(2) {
+    width: 100px;
+}
+
+.div-table .table-row .cal:nth-child(3) {
+    width: 166px;
+}
+
+.div-table .table-row .cal:nth-child(4) {
+    width: 100px;
+}
+
+.out-off-stock {
+    color: red;
+}
+
+.bottomInfo input[type="button"] {
+    background: #000;
+    padding: 10px 10px;
+    color: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    float: right;
+    margin-top: -20px;
+}
+
+.title-block {
+    height: 50px;
+    background: #888;
+    color: #fff;
+    line-height: 50px;
+    margin-top: 30px;
+    font-weight: bold;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.title-block span {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.info-block {
+    border: 2px solid #ddd;
+    margin: 10px 0 10px 0;
+    padding: 20px 0;
+}
+
+.info-block p {
+    margin: 10px 0 5px 20px;
+    color: #777;
+}
+
+.checkout .left-col .title .active {
+    background: #fff;
+    color: #000;
+}
+
+.checkout .left-col .title-active {
+    background: red;
+}

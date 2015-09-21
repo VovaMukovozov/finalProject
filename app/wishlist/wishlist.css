@@ -1,0 +1,88 @@
+.wishlist {
+    margin-top: 50px;
+}
+
+.wishlist .wishlist-line  {
+    height: 30px;
+    width: 870px;
+    background: #fff;
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.wishlist-albums .wap {
+    
+}
+
+.wishlist-albums .wishlist-banners {
+    float: left;
+    margin: 0 30px 30px 0;
+    width: 276px;
+    cursor: pointer;
+}
+
+.wishlist-albums .wishlist-banners:nth-child(3n+3) {
+    float: right;
+    margin-right: 0;
+}
+
+.wishlist-albums .wishlist-banners .pic {
+    width: 276px;
+    height: 276px;
+    margin-bottom: -3px;
+}
+
+.wishlist-albums .wishlist-banners .details {
+    background: #000;
+    color: #fff;
+    position: relative;
+    padding-bottom:40%;
+    height:0;
+    overflow:hidden;
+}
+
+.wishlist-albums .wishlist-banners .details p {
+    margin: 10px;
+}
+
+.content-albums .details .sub-details {
+    height: 50px;
+    position: static;
+    bottom: 0;
+}
+
+.wishlist-albums .details .sub-details .price {
+    position: absolute;
+    color: red;
+    bottom: 10px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.wishlist-albums .details .sub-details .cart {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    width: 20px;
+}
+
+.wishlist-albums .details .sub-details .info {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+}
+
+.wishlist-albums .details .sub-details .wishlist-remove {
+    position: absolute;
+    bottom: 10px;
+    right: 90px;
+    width: 20px; 
+}
+
+.empty-message {
+    text-align: center;
+}

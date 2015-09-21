@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: verdana;
+    background: #ededed;
+}
+
+#wrapper {
+    background: #ededed;
+    position: relative;
+    min-width: 1500px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+#main-1 {
+    background: #fff;
+    height: 50px;
+}
+
+#main-2 {
+    background: #fd0101;
+    height: 100px;
+    line-height: 100px;
+}
+
+#main-3 {
+    
+}
+
+.main {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.margin {
+    margin-top: 50px;   
+}
+
+#side-bar {
+    width: 280px;
+    float: left;
+    padding-bottom: 10px;
+}
+
+#content {
+    width: 890px;
+    float: right;
+}
+
+.top-line {
+    background: #fff;
+    font-size: 27px;
+    padding: 5px 0 5px 15px;
+}
+
+
+/* top navigation */
+#top-navigation {
+    line-height: 50px;
+}
+
+#top-navigation ul {
+    list-style-type: none;
+}
+
+#top-navigation ul li {
+    float: left;
+    margin-right: 30px;
+}
+
+#top-navigation ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* header */
+.grid {
+    float: left;
+    height: 100px;
+}
+
+.grid-1 {
+    width: 240px;
+    margin-right: 160px;
+}
+
+.grid-2 {
+    width: 370px;
+    margin-right: 190px;
+    position: relative;
+}
+
+.grid-3 {
+    width: 140px;
+    line-height: 0;
+}
+
+.grid-3 p {
+    margin-top: 30px;
+}
+
+.grid-4 {
+    width: 65px;
+    position: relative;
+}
+
+
+#site-name a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 70px;
+    margin-left: -5px;
+}
+
+#search {
+    height: 45px;
+    width: 360px;
+    border: 1px solid #fff;
+    padding-left: 5px;
+    font-size: 20px;
+}
+
+#cart-img {
+    width: 60px;
+    margin-top: 20px;
+}
+
+#cart-sum {
+    position: absolute;
+    top: -10px;
+    left: 28px;
+    color: #fff;
+}
+
+.search-box {
+    position: absolute;
+    top: 78px;
+    width: 365px;
+    background: #fff;
+    z-index: 999;
+    border-radius: 3px;
+    box-shadow: 3px 3px 10px #333;
+    border: 1px solid #ddd;
+    min-height: 200px;
+}
+
+.search-result {
+    cursor: pointer;
+    
+}
+
+.search-result:hover {
+    background: #ddd;
+}
+
+.search-result img {
+    width: 80px;
+    float: left;
+    margin: 10px 10px 0 10px;
+}
+
+.search-result p {
+    line-height: 30px;
+    font-style: italic;
+}
+
+.search-result .album-name {
+    font-weight: bold;
+    font-style: normal;
+}

@@ -1,0 +1,49 @@
+<div class="line">
+    <a class="back-nav" href="#/home">Home</a> 
+    <span>></span> 
+    <a class="back-nav" href="#/category/{{ category.genre_id }}">{{ category.genre_name }}</a> 
+    <span>></span> 
+    <a class="current-nav" href="#/albums/{{ category.genre_id }}/{{ album.album_id }}">
+        {{ album.album_name }} ({{ album.album_release_year }})
+    </a>
+</div>
+<div class="main">
+    <div id="side-bar">
+        <categories-music></categories-music>
+        <cart-side></cart-side>
+    </div>
+    <div id="content">
+        <div class="left-content">
+            <img ng-src="{{ album.image_path }}" />
+        </div>
+        <div class="right-content" ng-controller="CartController">
+            <h2 class="title">{{ album.album_name }} ({{ album.album_release_year }})</h2>
+            <p>Availability: 
+                <span style="color: green;" ng-if="album.album_stock > 0">In Stock</span>
+                <span style="color: red;" ng-if="album.album_stock === 0">Out of stock</span>
+            </p>
+            <div class="bottom-line"></div>
+            <p class="qty">Quantity: {{ album.album_stock }}</p>
+            <p class="price">${{ album.album_price }}</p>
+            <p class="description">{{ album.album_description }}</p>
+            <div class="box">
+                <p class="price">${{ album.album_price }}</p>
+                <div class="bottom-line"></div>
+                <label>Qty: </label><input type="number" ng-model="stock" />
+                <input type="button" value="Add to Cart" ng-click="addToCart(album, stock)" />
+                <div class="bottom-line"></div>
+                <p class="wishlist" ng-click="setItemToWishlist(album)">
+                    <img ng-if="checkIfIssetInWishlist" src="images/heart-red.png" style="float: left;" />
+                    <img ng-if="!checkIfIssetInWishlist" src="images/heart-white.png" style="float: left;" /> 
+                    <span ng-click="checkIfIssetInWishlist = !checkIfIssetInWishlist">Add to Wishlist</span>
+                </p>
+            </div>
+        </div>
+        <div class="line">
+            <p style="margin-left: 20px; color: #777;">Details</p>
+        </div>
+        <div class="long-description">
+            <p>{{ album.album_long_description }}</p>
+        </div>
+    </div>
+</div>

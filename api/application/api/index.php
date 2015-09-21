@@ -36,13 +36,13 @@ $app->get('/categories', function() use($genre) {
     echo ($genres);
 });
 
-$app->get('/album', function() use ( $album ) {
+$app->get('/albums', function() use ( $album ) {
     $albums = $album->getAllAlbums();
     echo $albums;
 });
 $app->get('/session', function() {
     if (isset($_SESSION['user_id'])) {
-        echo $_SESSION['user_id'];
+        echo 1;
     } else {
         echo false;
     }

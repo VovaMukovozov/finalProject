@@ -1,0 +1,37 @@
+<div class="main">
+    <div class="wishlist">
+        <div id="side-bar">
+            <categories-music></categories-music>
+            <cart-side></cart-side>
+        </div>
+        <div id="content">
+            <div class="wishlist-line">Wishlist</div>
+            <div class="empty-message" 
+                 ng-if="wishlistAlbums == 0">You have no items in Wishlist</div>
+            <div class="wishlist-albums">
+                <div class="wap">
+                    <div class="wishlist-banners" 
+                         ng-repeat="albums in wishlistAlbums | orderBy: '-album_id'" >
+                        <img class="pic" ng-src="{{albums.image_path}}" 
+                             ng-click="toAlbum(albums.album_id, albums.genre)" />
+                        <div class="details">
+                            <p>{{ albums.album_artist}} - 
+                                <span>{{ albums.album_name}}</span>
+                            </p>
+                            <div class="sub-details">
+                                <div class="price">${{ albums.album_price }}</div>
+                                <img class="cart" src="images/shopping232.png" 
+                                     ng-click="addToCart(albums, 1)" />
+                                <img class="info" src="images/info27.png" 
+                                     ng-click="toAlbum(albums.album_id, albums.genre)" />
+                                <img class="wishlist-remove" src="images/heart-red.png" 
+                                     ng-click="deleteItem($index)" title="Remove Item From Wishlist" />
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

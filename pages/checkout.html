@@ -1,0 +1,298 @@
+<div class="main">
+    <div class="checkout">
+        <div class="left-col">
+            <div class="top-line">Checkout</div>
+            <div class="br">
+                <div class="title" ng-class="{'title-active': visibilBillingForm}">
+                    <span ng-class="{'active': visibilBillingForm}">1</span>Billing Information
+                </div>
+                <div class="form-1" ng-show="visibilBillingForm">
+                    <form name="formBillingInfo" novalidate>
+                        <div class="space">Address<span>*</span><br />
+                            <input class="address" 
+                                   type="text" 
+                                   placeholder="Your Address" 
+                                   ng-model="checkout.order_shipping_address"
+                                   value="{{ checkout.order_shipping_address }}"
+                                   name="address" 
+                                   required
+                                   ng-pattern="/^(?=.*\d)[a-zA-Z\s\d\/]+$/"
+                                   ng-class="{'required': formBillingInfo.$submitted && formBillingInfo.address.$error.required}" />
+                            <div ng-show="formBillingInfo.$submitted">
+                                <div class="textError" ng-show="formBillingInfo.address.$error.required">
+                                    Address is required!
+                                </div>
+                            </div>
+                            <div ng-show="formBillingInfo.$submitted">
+                                <div class="textError" 
+                                     ng-show="formBillingInfo.address.$error.pattern">
+                                   Use minimum 3 characters and minimum one number
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space">City<span>*</span><br />
+                            <input class="other-input" 
+                                   type="text" 
+                                   placeholder="Your City"
+                                   ng-model="checkout.order_shipping_city"
+                                   value="{{ checkout.order_shipping_city }}"
+                                   required 
+                                   name="city"
+                                   ng-pattern="/^[a-zA-Z ]{3,}$/"
+                                   ng-class="{'required': formBillingInfo.$submitted && formBillingInfo.city.$error.required}" />
+                            <div ng-show="formBillingInfo.$submitted">
+                                <div class="textError" ng-show="formBillingInfo.city.$error.required">
+                                    City is required!
+                                </div>
+                            </div>
+                             <div ng-show="formBillingInfo.$submitted">
+                                <div class="textError" 
+                                     ng-show="formBillingInfo.city.$error.pattern">
+                                   Use minimum 3 characters
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space">Zip/Postal Code<span>*</span><br />
+                            <input class="other-input" 
+                                   type="text" 
+                                   placeholder="Your Zip/Postal Code" 
+                                   ng-model="checkout.order_shipping_zipcode"
+                                   value="{{ chekcout.order_shipping_zipcode }}"
+                                   required
+                                   name="postalCode"
+                                   ng-pattern="/^[0-9]{3,}$/"
+                                   ng-class="{'required': formBillingInfo.$submitted && formBillingInfo.postalCode.$error.required}" />
+                            <div ng-show="formBillingInfo.$submitted">
+                                <div class="textError" ng-show="formBillingInfo.postalCode.$error.required">
+                                    Zip/Postal Code is required!
+                                </div>
+                            </div>
+                            <div ng-show="formBillingInfo.$submitted">
+                                <div class="textError" 
+                                     ng-show="formBillingInfo.postalCode.$error.pattern">
+                                   Please enter a valid Zip/Postal Code
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space">Telephone<span>*</span><br />
+                            <input class="other-input" 
+                                   type="text" 
+                                   placeholder="Your Telephone"
+                                   ng-model="checkout.order_shipping_phone"
+                                   value="{{ checkout.order_shipping_phone }}"
+                                   required
+                                   name="tel"
+                                   ng-pattern="/^0\d([\d]{0,1})([-]{0,1})\d{7}$/"
+                                   ng-class="{'required': formBillingInfo.$submitted && formBillingInfo.tel.$error.required}" />
+                            <div ng-show="formBillingInfo.$submitted">
+                                <div class="textError" ng-show="formBillingInfo.tel.$error.required">
+                                    Telephone is required!
+                                </div>
+                            </div>
+                            <div ng-show="formBillingInfo.$submitted">
+                                <div class="textError" 
+                                     ng-show="formBillingInfo.tel.$error.pattern">
+                                   Please enter a valid phone number
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p style="color: red;">* Required Fields</p>
+                            <input type="submit" value="Continue" ng-click="form1()" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="br">
+                <div class="title" ng-class="{'title-active': visibilPaymenForm}">
+                    <span ng-class="{'active': visibilPaymenForm}">2</span>Payment Information
+                </div>
+                <div class="form-2" ng-show="visibilPaymenForm">
+                    <div class="space">
+                        <input type="radio" 
+                               name="payMethod"
+                               ng-model="order_payment_method" 
+                               value="Check / Money order"
+                               ng-click="methodCheck()" ng-checked="true" />
+                        Check / Money order
+                    </div>
+                    <div class="space">
+                        <input type="radio" 
+                               name="payMethod" 
+                               ng-model="order_payment_method" 
+                               value="Credit Card"
+                               ng-click="methodCard()" />
+                        Cradit Card
+                    </div>
+                    
+                    <input type="button" value="Continue" ng-show="buttonPay" ng-click="checkMethod()" />
+                    
+                    <form class="formCard" name="cardForm" ng-show="showFormCard" novalidate>
+                        <div class="space">
+                            <div>Name on Card<span>*</span></div>
+                            <input type="text" 
+                                   placeholder="Name on Card"
+                                   name="nameOnCard" 
+                                   required
+                                   ng-model="nameOnCard"
+                                   ng-pattern="/(\b\S{2,}.*?){2,}/"
+                                   ng-class="{'required': cardForm.$submitted && cardForm.nameOnCard.$error.required}" />
+                            <div ng-show="cardForm.$submitted">
+                                <div class="textError" ng-show="cardForm.nameOnCard.$error.required">
+                                    Name on Card is required!
+                                </div>
+                            </div>
+                            <div ng-show="cardForm.$submitted ">
+                                <div class="textError" ng-show="cardForm.nameOnCard.$error.pattern">
+                                    please use minimum two word
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space">
+                            <div>Credit Card Type<span>*</span></div>
+                            <select name="cardType" 
+                                    ng-model="cardType" 
+                                    ng-class="{'required': cardType === 'Select Credit Card' && cardForm.$submitted}" >
+                                <option>{{ cardType }}</option>
+                                <option>Visa</option>
+                                <option>Master Card</option>
+                                <option>Direct Card</option>
+                            </select>
+                            <div ng-show="cardForm.$submitted">
+                                <div class="textError" ng-show="cardType === 'Select Credit Card'">
+                                    please select a Credit Card
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space">
+                            <div>Credit Card Number<span>*</span></div>
+                            <input type="text" 
+                                   placeholder="Credit Card Number" 
+                                   name="cardNumber" 
+                                   ng-model="cardNumber" 
+                                   required
+                                   ng-pattern="/^[0-9]{16}$/"
+                                   ng-class="{'required': cardForm.$submitted && cardForm.cardNumber.$error.required}" />
+                            <div ng-show="cardForm.$submitted">
+                                <div class="textError" ng-show="cardForm.cardNumber.$error.required">
+                                    Credit Card Number is required!
+                                </div>
+                            </div>
+                            <div ng-show="cardForm.$submitted ">
+                                <div class="textError" ng-show="cardForm.cardNumber.$error.pattern">
+                                    Credit Card Number not valid
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space">
+                            <div>Expiration Date<span>*</span></div>
+                            <select>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                            <select>
+                                <option>2016</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                                <option>2020</option>
+                            </select>
+                        </div>
+                        <div class="space">
+                            <div>Card Verification Number<span>*</span></div>
+                                <input style="width: 50px;" 
+                                       type="text" 
+                                       placeholder="***"
+                                       name="verifyNum"
+                                       required
+                                       ng-model="verifyNum"
+                                       ng-pattern="/^[0-9]{3}$/"
+                                       ng-class="{'required': cardForm.$submitted && cardForm.verifyNum.$error.required}" /> What is this?
+                                <div ng-show="cardForm.$submitted">
+                                    <div class="textError" ng-show="cardForm.verifyNum.$error.required">
+                                        Verification Number is required!
+                                    </div>
+                                </div>
+                                <div ng-show="cardForm.$submitted">
+                                    <div class="textError" ng-show="cardForm.verifyNum.$error.pattern">
+                                        Card Verification Number not valid
+                                    </div>
+                                </div>
+                        </div>
+                        <input type="submit" value="Continue" ng-click="cardSub()" />
+                    </form>
+                </div>
+            </div>
+            <div class="br">
+                <div class="title"  ng-class="{'title-active': visibilOrder}">
+                    <span ng-class="{'active': visibilOrder}">3</span>Order Review
+                </div>
+                <div class="form-3" ng-show="visibilOrder">
+                    <div class="div-table">
+                        <div class="table-row">
+                            <div class="cal"><p class="head">Product Name</p></div>
+                            <div class="cal"><p class="head">Price</p></div>
+                            <div class="cal"><p class="head">Qty</p></div>
+                            <div class="cal"><p class="head">Subtotal</p></div>
+                        </div>
+                        <div class="table-row" ng-repeat="albums in albumsCart">
+                            <div class="cal"><p>{{ albums.album_name }}</p></div>
+                            <div class="cal">
+                                <p>${{ albums.album_price }}</p>
+                            </div>
+                            <div class="cal">
+                                <p>{{ albums.sum }}</p>
+                            </div>
+                            <div class="cal">
+                                <p>${{ albums.sum * albums.album_price }}</p>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div style="border-right: 0;" class="cal"><p class="head"></p></div>
+                            <div style="border-right: 0;" class="cal"><p class="head"></p></div>
+                            <div class="cal"><p class="head">Total</p></div>
+                            <div class="cal"><p class="head">{{ subtotal }}</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomInfo" ng-show="visibilOrder">
+                    <p>Forgot an Item? <a href="#/home">Edit Your Cart</a></p>
+                    <input type="button" value="Place Order" ng-click="placeOrder()" />
+                </div>
+            </div>
+        </div>
+        <div class="right-col">
+            <div class="progress">Your Checkout Progress</div>
+            <div class="title-block">
+                Billing Information | <span ng-click="changeBillingInfo()">Change</span>
+            </div>
+            <div class="info-block">
+                <p>{{ checkout.order_shipping_address }}</p>
+                <p>{{ checkout.order_shipping_city }}</p>
+                <p>{{ checkout.order_shipping_zipcode }}</p>
+                <p>{{ checkout.order_shipping_phone }}</p>
+            </div>
+            <div ng-if="!visibilBillingForm">
+                <div class="title-block">
+                Payment Method | <span ng-click="changePaymentInfo()">Change</span>
+                </div>
+                <div class="info-block">
+                    <p>Credit Card (saved)</p>
+                    <p>Credit Card Type: <br /> {{ cardType === 'Select Credit Card' ? '' : cardType }}</p>
+                    <p>Credit Card Number: <br /> xxxx-{{ cardNumber | limitTo: 4:12 }}</p>
+                    <p>Name on the Card: <br /> {{ nameOnCard }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

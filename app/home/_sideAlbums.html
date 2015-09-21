@@ -1,0 +1,20 @@
+<div class="side-albums">
+    <div class="side-banner" 
+         ng-repeat="albums in albumsArr | orderBy: '-album_id' | limitTo: 2: 8">
+        <img class="pic" ng-src="{{ albums.image_path }}" 
+             ng-click="toAlbum(albums.album_id, albums.genre)" />
+        <div class="details">
+            <a class="album-name" href="#/albums/{{ albums.genre }}/{{ albums.album_id }}">
+                {{ albums.album_name }}
+            </a>
+            <p class="album-artist">{{ albums.album_artist }}</p>
+            <div class="sub-details">
+                <div class="price">${{ albums.album_price }}</div>
+                <img class="cart" src="images/shopping232.png" 
+                     ng-click="addToCart(albums, 1)" />
+                <img class="info" src="images/info27.png" 
+                     ng-click="toAlbum(albums.album_id, albums.genre)" />
+            </div>
+        </div>
+    </div>
+</div>

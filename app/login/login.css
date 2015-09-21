@@ -1,0 +1,217 @@
+.reg-block {
+    margin-top: 30px;
+}
+
+.reg-block .create-account-block {
+    width: 49%;
+    padding-bottom: 65px;
+    float: left;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+.reg-block .login-block {
+    width: 49%;
+    padding-bottom: 20px;
+    float: right;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+.reg-block .title {
+    border-bottom: 1px solid #ccc;
+    margin: 20px 20px 20px 20px;
+    padding-bottom: 15px;
+    color: red;
+    font-size: 12px;
+}
+
+.reg-block .description {
+    color: #625F62;
+    margin: 20px  50px 20px 20px;
+}
+
+.reg-block .button-login {
+    margin-left: 20px;
+    border: 1px solid #000;
+    background: #000;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.reg-block .button-login:hover {
+    background: red;
+    border: 1px solid red;
+}
+
+#registration-popup {
+    background: #fff;
+    position: absolute;
+    left: 38%;
+    top: 180px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    padding-bottom: 20px;
+    width: 350px;
+    z-index: 1;
+}
+
+#registration-popup .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #ccc;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#registration-popup .close-popup:hover {
+    color: #999;
+}
+
+#registration-popup h3 {
+    color: #999;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#registration-popup h4 {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#registration-popup input {
+    height: 34px;
+    width: 300px;
+    padding-left: 5px;
+    margin: 10px 0 10px 20px;
+}
+
+#registration-popup input[type="submit"] {
+    width: 310px;
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#registration-popup input[type="submit"]:hover {
+    background: red;
+    border: 1px solid red;
+}
+
+.formError {
+    color: red;
+    margin: -10px 0 0 20px;
+    font-size: 14px;
+}
+
+.css-form input.ng-invalid.ng-touched {
+    background-color: red;
+}
+
+.css-form input.ng-valid.ng-touched {
+    background-color: #fff;
+}
+
+.error {
+    background: red;
+}
+
+.spinner {
+    margin: 100px auto;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: 10px;
+    position: absolute;
+    top: 100px;
+    left: 150px;
+}
+
+.spinner > div {
+  background-color: #333;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+.loginForm label {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.loginForm input[type="email"], input[type="password"] {
+    height: 30px;
+    width: 70%;
+    margin: 5px 0 12px 20px;
+    padding-left: 5px;
+}
+
+.loginForm input[type="submit"] {
+    padding: 10px 10px;
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 0 0 20px;
+}
+
+.loginForm input[type="submit"]:hover {
+    background: red;
+    border: 1px solid red;
+}
+
+.loginForm .reqFields {
+    color: red; 
+    text-align: right; 
+    margin-right: 20px; 
+    font-size: 14px;
+}
+
+.popupOpacity {
+    opacity: 0.7;
+}
+
+

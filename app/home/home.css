@@ -1,0 +1,298 @@
+.content-top {
+    
+}
+
+.col-1 {
+    float: left;
+    position: relative;
+    width: 500px;
+}
+
+.col-2 {
+    margin-left: 500px;
+}
+
+/* big banner styles */
+.big-banner {
+    cursor: pointer;
+    position: relative;
+    width: 500px;
+}
+
+.big-banner .pic {
+    width: 500px;
+}
+
+.big-banner .details {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    height: 80px;
+}
+
+.big-banner .details .album-name {
+    color: #fff;
+    font-size: 45px;
+    margin-left: 10px;
+}
+
+.big-banner .details .album-artist {
+    color: red;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.big-banner .details .sub-details {
+    height: 50px;
+    position: relative;
+}
+
+.big-banner .sub-details-view {
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    height: 130px;
+    overflow: hidden;
+}
+
+.big-banner .details .sub-details .price {
+    position: absolute;
+    color: #fff;
+    bottom: 10px;
+    left: 10px;
+    font-size: 25px;
+}
+
+.big-banner .details .sub-details .cart {
+    position: absolute;
+    bottom: 10px;
+    right: 70px;
+    width: 30px;
+}
+
+.big-banner .details .sub-details .info {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 30px;
+}
+
+/*---------------------------------*/
+
+/* small banners style */
+
+.small-banners {
+    float: left;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+.small-banners .pic {
+    width: 250px;
+}
+
+.small-banners .details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    padding-bottom: 10px;
+}
+
+.small-banners .details .album-name {
+    color: #fff;
+    margin: 10px 0 0 10px;
+    font-size: 20px;
+}
+
+.small-banners .details .album-artist {
+    color: red;
+    margin-left: 10px;
+}
+
+.small-banners .details .sub-details {
+    position: relative;
+    height: 40px;
+}
+
+.small-banners .sub-details-view {
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    height: 80px;
+    overflow: hidden;
+}
+
+.small-banners .details .sub-details .price {
+    position: absolute;
+    color: #fff;
+    bottom: 10px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.small-banners .details .sub-details .cart {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    width: 20px;
+}
+
+.small-banners .details .sub-details .info {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 20px;
+}
+
+/*---------------------------------*/
+
+/* side banners style */
+
+.side-albums {
+    margin-top: 10px;
+}
+
+.side-albums .side-banner {
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.side-albums .side-banner .pic {
+    width: 280px;
+    margin-bottom: -3px;
+}
+
+.side-albums .details {
+    background: red;
+    text-align: left;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.side-albums .details .album-name {
+    color: #fff;
+    font-size: 25px;
+    margin: 10px 0 0 10px;
+    text-decoration: none;
+}
+
+.side-albums .details .album-name:hover {
+    text-decoration: underline;
+}
+
+.side-albums .details .album-artist {
+    color: #000;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.side-albums .details .sub-details {
+    height: 50px;
+    position: relative;
+}
+
+.side-albums .details .sub-details .price {
+    position: absolute;
+    color: #fff;
+    bottom: 10px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.side-albums .details .sub-details .cart {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    width: 20px;
+}
+
+.side-albums .details .sub-details .info {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+}
+
+/*---------------------------------*/
+
+/* content banners style */
+
+.content-top {
+   
+}
+
+.content-albums .wap {
+    
+}
+
+.content-albums .content-banners {
+    float: left;
+    margin: 30px 30px 0 0;
+    width: 276px;
+    cursor: pointer;
+}
+
+.content-albums .content-banners:nth-child(3n+3) {
+    float: right;
+    margin-right: 0;
+}
+
+.content-albums .content-banners .pic {
+    width: 276px;
+    height: 276px;
+    margin-bottom: -3px;
+}
+
+.content-albums .content-banners .details {
+    background: #000;
+    color: #fff;
+    position: relative;
+    padding-bottom:40%;
+    height:0;
+    overflow:hidden;
+}
+
+.content-albums .content-banners .details p {
+    margin: 10px;
+}
+
+.content-albums .details .sub-details {
+    height: 50px;
+    position: static;
+    bottom: 0;
+}
+
+.content-albums .details .sub-details .price {
+    position: absolute;
+    color: #fff;
+    bottom: 10px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.content-albums .details .sub-details .cart {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    width: 20px;
+}
+
+.content-albums .details .sub-details .info {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+}

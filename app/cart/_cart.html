@@ -1,0 +1,23 @@
+<div>
+    <div class="cart-line">My Cart</div>
+    <p class="cart-message" ng-if="albumsStorage == 0">You have no items in your shopping cart</p>
+    <div class="cart" ng-if="albumsStorage != 0">
+        <p class="cart-message">There are <span>{{ itemsInCart() }} items</span> in your cart</p>
+        <div class="line-border"></div>
+        <p class="subtotal" >Cart Subtotal <span>${{ subTotal() }}</span>
+            <a href="#/checkout"><input type="button" value="Checkout" /></a>
+        </p>
+        <div class="line-border"></div>
+        <p>RECENTLY ADDED ITEM(S)</p>
+        <div class="albums-cart" ng-repeat="albums in albumsStorage">
+            <img class="removeItem" src="images/x.png" ng-click="removeItem($index)" />
+            <div style="clear: both"></div>
+            <div style="margin-top: 10px;">
+                <img class="pic" ng-src="{{ albums.image_path }}" />
+                <p>{{ albums.album_artist | limitTo: 20 }} - {{ albums.album_name | limitTo: 20 }}</p>
+                <p class="sum">{{albums.sum}} x ${{ albums.album_price }}</p>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+    </div>
+</div>

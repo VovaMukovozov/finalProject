@@ -25,7 +25,7 @@ class SearchRESTController extends SearchController {
    public function searchAlbum($input){
         $albums = parent::searchAlbum(json_decode($input,true));
         if($albums){
-           return $this->buildAnswer(true, 'Ok',array($albums));
+           return $this->buildAnswer(true, 'Ok', $albums);
         }else{
            return $this->buildAnswer(false, 'Cannot fetch albums at this time');
         }
